@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from catalogue import views as catalogueViews
 
 urlpatterns = [
-    path("", include("catalogue.urls")),
+    path("", include("catalogueViews.home")),
     path("admin/", admin.site.urls),
 ]
