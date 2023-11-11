@@ -19,6 +19,6 @@ from django.urls import include, path
 from catalogue import views as catalogueViews
 
 urlpatterns = [
-    path("", include("catalogueViews.home")),
+    path("", include(catalogueViews.home)),
     path("admin/", admin.site.urls),
 ]
