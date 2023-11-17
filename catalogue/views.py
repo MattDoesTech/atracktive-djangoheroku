@@ -2,7 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'home.html', {'name': 'John Doe'})
+    searchTrack = request.GET.get('searchTrack')
+    return render(request, 'home.html', {'searchTrack': searchTrack})
 
 def about(request):
     return render(request, 'about.html')
