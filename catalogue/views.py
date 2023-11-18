@@ -6,7 +6,7 @@ def home(request):
     return render(request, 'home.html', {'searchTrack': searchTrack})
 
 def signup(request):
-    email = request.Get.get('email')
+    email = request.GET.get('email')
     return render(request, 'signup.html', {'email':email})
 
 def about(request):
