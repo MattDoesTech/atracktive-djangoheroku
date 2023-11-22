@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Catalogue
-admin.site.register(Catalogue)
+from .models import Tracks
+admin.site.register(Tracks)
 # Register your models here.
