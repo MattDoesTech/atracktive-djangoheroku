@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn atracktive.wsgi
+web: gunicorn atracktive.wsgi --log-file -
