@@ -13,7 +13,15 @@
         </div>
         <button type="submit" class="btn btn-primary">Search</button>
         </form>
-        Searching for {{ searchTrack }}
+        <p>Searching for: {{ searchTerm }}</p>
+        {% for track in tracks %}
+          <h2>{{ track.title }}</h2>
+          <h3>{{ track.description }}</h3>
+          <img src="{{ track.image.url }}">
+          {% if track.url %}
+            <a href="{{ track.url }}">track Link</a>
+          {% endif %}
+        {% endfor %}
         <br />
         <br />
         <h2>Join our mailing list:</h2>
