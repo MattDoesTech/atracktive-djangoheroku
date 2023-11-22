@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from models import Track
+from .models import Track
 
 def home(request):
     searchTerm = request.GET.get('searchTerm')
