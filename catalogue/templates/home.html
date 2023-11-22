@@ -15,11 +15,11 @@
         </form>
         <p>Searching for: {{ searchTerm }}</p>
         <br />
-        <br />
         {% for track in tracks %}
           <h2>{{ track.title }}</h2>
           <h3>{{ track.description }}</h3>
           <img src="{{ track.image.url }}">
+          <img src="{{ track.audio_file }}">
           {% if track.url %}
             <a href="{{ track.url }}">track Link</a>
           {% endif %}
