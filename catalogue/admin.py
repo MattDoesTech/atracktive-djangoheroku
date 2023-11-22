@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Tracks
-admin.site.register(Tracks)
+from .models import Track
+admin.site.register(Track)
 # Register your models here.
