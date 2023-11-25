@@ -19,7 +19,12 @@
           <h2>{{ track.title }}</h2>
           <h3>{{ track.description }}</h3>
           <img src="{{ track.image.url }}">
-          <audio src="{{ track.audio_file }}" type="audio/mpeg">
+          <img src="{{ track.audio_file }}">
+          <audio controls>
+            <source src="{{ track.audio_file }}" type="audio/ogg">
+            <source src="{{ track.audio_file }}" type="audio/mpeg">
+            Your browser does not support the audio tag.
+          </audio>
           {% if track.url %}
             <a href="{{ track.url }}">track Link</a>
           {% endif %}
