@@ -14,6 +14,8 @@ from pathlib import Path
 import dj_database_url
 import os
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,7 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-==!b)7op_fo)82(ci*8%pp_)$7*i82u7@#eu67ox!e7mk+cbh!'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# AWS S3 SETTINGS
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_URL = os.environ.get('AWS_URL')
+AWS_DEFAULT_ACL = None
+AWS_S3_REGION_NAME = 'us-east-1'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -43,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'catalogue',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +68,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 ROOT_URLCONF = 'atracktive.urls'
 
@@ -130,9 +142,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = AWS_URL + '/static/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_URL = AWS_URL + '/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
