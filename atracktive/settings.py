@@ -101,13 +101,14 @@ WSGI_APPLICATION = 'atracktive.wsgi.application'
 
 DATABASES = {
     'default': {
-        'DATABASE': os.getenv('DATABASE_URL'),
-        # 'ENGINE': os.getenv('DB_ENGINE'),
-        # 'NAME': os.getenv('DB_NAME'),
-        # 'USER': os.getenv('DB_USER'),
-        # 'PASSWORD': os.getenv('DB_PASSWORD'),
-        # 'HOST': os.getenv('DB_HOST'),
-        # 'PORT':  os.getenv('DB_PORT'),
+        dj_database_url.config(conn_max_age=600, ssl_require=True)
+        # 'DATABASE': os.getenv('DATABASE_URL'),
+        # # 'ENGINE': os.getenv('DB_ENGINE'),
+        # # 'NAME': os.getenv('DB_NAME'),
+        # # 'USER': os.getenv('DB_USER'),
+        # # 'PASSWORD': os.getenv('DB_PASSWORD'),
+        # # 'HOST': os.getenv('DB_HOST'),
+        # # 'PORT':  os.getenv('DB_PORT'),
     }
 }
 
@@ -168,3 +169,4 @@ REST_FRAMEWORK = {
        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
 }
+
