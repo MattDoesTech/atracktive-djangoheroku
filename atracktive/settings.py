@@ -99,9 +99,9 @@ WSGI_APPLICATION = 'atracktive.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        dj_database_url.config(conn_max_age=600, ssl_require=True)
         # 'DATABASE': os.getenv('DATABASE_URL'),
         # # 'ENGINE': os.getenv('DB_ENGINE'),
         # # 'NAME': os.getenv('DB_NAME'),
@@ -170,3 +170,4 @@ REST_FRAMEWORK = {
     ),
 }
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
