@@ -39,7 +39,7 @@ AWS_S3_REGION_NAME = 'us-east-1'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'atracktive-225c4e44619d.herokuapp.com'
@@ -102,13 +102,7 @@ WSGI_APPLICATION = 'atracktive.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'DATABASE': os.getenv('DATABASE_URL'),
-        # # 'ENGINE': os.getenv('DB_ENGINE'),
-        # # 'NAME': os.getenv('DB_NAME'),
-        # # 'USER': os.getenv('DB_USER'),
-        # # 'PASSWORD': os.getenv('DB_PASSWORD'),
-        # # 'HOST': os.getenv('DB_HOST'),
-        # # 'PORT':  os.getenv('DB_PORT'),
+
     }
 }
 
