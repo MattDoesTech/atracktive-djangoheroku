@@ -19,7 +19,7 @@ class Artist(models.Model):
         return self.name
     
 class Album(models.Model):
-    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
     artist = models.ManyToManyField(Artist)
     tracks = models.ManyToManyField(Track)
