@@ -3,9 +3,10 @@ from django.shortcuts import render
 from .models import Track
 
 def home(request):
-    searchTerm = request.GET.get('searchTerm')
+    # searchTerm = request.GET.get('searchTerm')
     tracks = Track.objects.all()
-    return render(request, 'home.html', {'searchTerm': searchTerm, 'tracks': tracks})
+    return render(request, 'home.html', {'tracks': tracks})
+    # return render(request, 'home.html', {'searchTerm': searchTerm, 'tracks': tracks})
 
 def signup(request):
     email = request.GET.get('email')
