@@ -17,8 +17,8 @@ class Track(models.Model):
     release_date = models.DateField(auto_now_add=True)
     # audio_link = models.CharField(max_length=200,blank=True,null=True)
     # url = models.URLField(blank=True)
-    # def __str__(self):
-    #     return self.audio_file
+    def __str__(self):
+        return self.name
     
 class Album(models.Model):
     name = models.CharField(max_length=100)
