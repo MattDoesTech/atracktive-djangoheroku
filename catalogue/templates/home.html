@@ -17,10 +17,9 @@
         <br />
         {% for album in albums %}
           <h2>{{ album.name }}</h2>
-          <!-- {% for artist in album.artists.all %} -->
-          <h3>{{ album.artists.name }}</h3>
-        
-          <!-- {% endfor %} -->
+          {% for artist in album.artists.all %}
+            <h3>{{ album.artists.name }}</h3>
+          {% endfor %}
           <h3>{{ album.description }}</h3>
           <img src="{{ album.image.url }}">
           <audio controls>
