@@ -6,9 +6,12 @@ from .models import Artist
 
 def home(request):
     albums = Album.objects.all()
+    
 
     context = {
         'albums': albums,
+        'artists': Artist.objects.all(),  # Include artists in the context
+        'tracks': Track.objects.all(),      # Include songs in the context
     }
 
     return render(request, 'home.html', context)
