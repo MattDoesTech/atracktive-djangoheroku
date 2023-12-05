@@ -23,7 +23,7 @@
           <h3>{{ album.description }}</h3>
           <img src="{{ album.image.url }}">
           <audio controls>
-            <source src="{{ album.tracks.url }}" type="audio/mpeg">
+            <source src="{{ album.tracks.audio_file.url }}" type="audio/mpeg">
             Your browser does not support the audio tag.
           </audio>
           {% if track.url %}
