@@ -5,10 +5,10 @@ from .models import Album
 from .models import Artist
 
 def home(request):
-    album = Album.objects.first()
+    albums = Album.objects.first()
 
     context = {
-        'album': album,
+        'albums': albums,
     }
 
     return render(request, 'home.html', context)
