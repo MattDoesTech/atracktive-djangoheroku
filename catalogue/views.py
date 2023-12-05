@@ -5,9 +5,16 @@ from .models import Album
 from .models import Artist
 
 def home(request):
+    album = Album.objects.first()
+
+    context = {
+        'album': album,
+    }
+
+    return render(request, 'home.html', context)
     # searchTerm = request.GET.get('searchTerm')
-    albums = Album.objects.all()
-    return render(request, 'home.html', {'albums': albums})
+    # albums = Album.objects.all()
+    # return render(request, 'home.html', {'albums': albums})
     # return render(request, 'home.html', {'searchTerm': searchTerm, 'tracks': tracks})
 
 def signup(request):
