@@ -5,7 +5,7 @@ from .models import Album
 from .models import Artist
 
 def home(request):
-    albums = Album.objects.first()
+    albums = Album.objects.all()
 
     context = {
         'albums': albums,
