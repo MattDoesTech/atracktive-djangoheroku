@@ -33,11 +33,11 @@
     {% if album %}
         <div class="album">
             <h2>{{ album.name }}</h2>
-            <p>Artist: {{ album.artists.name }}</p>
+            <p>Artist: {{ album.artist.name }}</p>
             <img src="{{ album.image.url}}"
             <h3>track:</h3>
             {% for track in album.tracks.all %}
-                <p>{{ tracks.name }} by {{ tracks.artists.name }}</p>
+                <p>{{ tracks.name }} by {{ tracks.artist.name }}</p>
                 <audio controls>
                     <source src="{{ track.audio_file.url }}" type="audio/mp3">
                     Your browser does not support the audio element.

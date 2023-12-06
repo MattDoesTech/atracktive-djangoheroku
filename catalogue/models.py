@@ -25,7 +25,7 @@ class Album(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
     release_date = models.DateField(auto_now_add=True)
-    artists = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     tracks = models.ManyToManyField(Track)
     image = models.ImageField(upload_to='catalogue/images/albums')
 

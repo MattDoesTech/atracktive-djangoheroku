@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='track',
             name='artist',
-            field=models.ForeignKey(default='waitmattno', on_delete=django.db.models.deletion.CASCADE, to='catalogue.artist'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='catalogue.artist'),
             preserve_default=False,
         ),
     ]

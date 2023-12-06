@@ -8,7 +8,7 @@ def home(request):
 
     context = {
         'album': album,
-        'artists': Artist.objects.all(),  # Include artists in the context
+        'artist': Artist.objects.all(),  # Include artists in the context
         'tracks': Track.objects.all(),      # Include songs in the context
     }
 
