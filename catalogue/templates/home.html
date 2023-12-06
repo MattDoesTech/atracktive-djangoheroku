@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Atracktive</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
-  <body>
-      <br />
-      <h1>{{ album.name }}</h1>
-      <br />
-      <h2>{{ album.description }}</h2>
-      <br />
-      <h3>Artist: {{ album.artists.name }}</h3>
-      <br />
-      <img src="{{ album.image.url }}">
-      <br />
-      <audio controls>
-        <source src="{{ album.tracks.audio_file.url }}" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-      <br />
-        <h2>Join our mailing list:</h2>
-        <form action="{% url 'signup' %}">
-            <div class="mb-3">
-                <label for="email" class="form-label">
-                    Enter your email:
-                </label>
-                <input type="email" class="form-control"
-                    name="email" />
-            </div>
-            <button type="submit" class="btn btn-primary">
-                Sign Up
-            </button>
-        </form>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Music App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .album {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Your Music App</h1>
+
+    {% if album %}
+        <div class="album">
+            <h2>{{ album.name }}</h2>
+            <p>Artist: {{ album.artists.name }}</p>
+
+            <h3>track:</h3>
+            {% for track in album.tracks.all %}
+                <p>{{ tracks.name }} by {{ tracks.artists.name }}</p>
+                <audio controls>
+                    <source src="{{ track.audio_file.url }}" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No album found.</p>
+    {% endif %}
+</body>
 </html>

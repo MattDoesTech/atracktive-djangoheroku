@@ -1,11 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Track
-from .models import Album
-from .models import Artist
+from .models import Album, Artist, Track
 
 def home(request):
-    albums = Album.objects.all()
+    albums = Album.objects.first()
     
 
     context = {
