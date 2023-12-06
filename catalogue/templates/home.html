@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Music App</title>
+    <title>ATRACKTIVE</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,14 +28,14 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to Your Music App</h1>
+    <h1>Welcome to ATRACKTIVE</h1>
 
     {% if album %}
         <div class="album">
             <h2>{{ album.name }}</h2>
             <p>Artist: {{ album.artist.name }}</p>
             <img src="{{ album.image.url}}">
-            <h3>track:</h3>
+            <h3>Track:</h3>
             {% for track in album.tracks.all %}
                 <p>{{ track.name }} by {{ track.artist.name }}</p>
                 <audio controls>
