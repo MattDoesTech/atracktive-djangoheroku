@@ -1,11 +1,22 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Track
+from .models import Album, Artist, Track
 
 def home(request):
-    searchTerm = request.GET.get('searchTerm')
-    tracks = Track.objects.all()
-    return render(request, 'home.html', {'searchTerm': searchTerm, 'tracks': tracks})
+    album = Album.objects.first()
+    
+
+    context = {
+        'album': album,
+        'artist': Artist.objects.all(),  # Include artists in the context
+        'tracks': Track.objects.all(),      # Include songs in the context
+    }
+
+    return render(request, 'home.html', context)
+    # searchTerm = request.GET.get('searchTerm')
+    # albums = Album.objects.all()
+    # return render(request, 'home.html', {'albums': albums})
+    # return render(request, 'home.html', {'searchTerm': searchTerm, 'tracks': tracks})
 
 def signup(request):
     email = request.GET.get('email')
