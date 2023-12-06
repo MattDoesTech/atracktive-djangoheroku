@@ -34,7 +34,7 @@
         <div class="album">
             <h2>{{ album.name }}</h2>
             <p>Artist: {{ album.artists.name }}</p>
-
+            <img src="{{ album.image.url}}"
             <h3>track:</h3>
             {% for track in album.tracks.all %}
                 <p>{{ tracks.name }} by {{ tracks.artists.name }}</p>

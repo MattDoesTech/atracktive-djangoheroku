@@ -10,7 +10,7 @@ class Artist(models.Model):
     
 class Track(models.Model):
     name = models.CharField(max_length=100)
-    models.ForeignKey(Artist, on_delete=models.CASCADE)
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     description = models.CharField(max_length=250)
     audio_file = models.FileField(blank=True,null=True,upload_to='catalogue/audio/')
     image = models.ImageField(upload_to='catalogue/images/tracks')  
@@ -19,6 +19,7 @@ class Track(models.Model):
     # url = models.URLField(blank=True)
     def __str__(self):
         return self.name
+    
     
 class Album(models.Model):
     name = models.CharField(max_length=100)
