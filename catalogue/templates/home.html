@@ -6,32 +6,15 @@
   </head>
   <body>
     <div class="container">
-        <!-- <form action=""> -->
-        <!-- <div class="mb-3">
-            <label class="form-label">Search For Track</label>
-            <input type="text" name="searchTrack" class="form-control">
-        </div> -->
-        <!-- <button type="submit" class="btn btn-primary">Search</button> -->
-        <!-- </form> -->
-        <!-- <p>Searching for: {{ searchTerm }}</p> -->
-        <br />
-        <!-- {% for album in albums %} -->
           <h2>{{ album.name }}</h2>
-          <!-- {% for artist in album.artists.all %} -->
-          <p>Artist: {{ album.artist.name }}</p>
-          <!-- {% endfor %} -->
+          <h2>Artist: {{ album.artist.name }}</h2>
           <h3>{{ album.description }}</h3>
           <img src="{{ album.image.url }}">
           <audio controls>
             <source src="{{ album.tracks.audio_file.url }}" type="audio/mpeg">
             Your browser does not support the audio tag.
           </audio>
-          {% if track.url %}
-            <a href="{{ track.url }}">track Link</a>
-           {% endif %}
-        <!-- {% endfor %}  -->
-        <br />
-        <br />
+          
         <h2>Join our mailing list:</h2>
         <form action="{% url 'signup' %}">
             <div class="mb-3">
