@@ -37,7 +37,7 @@
             <img src="{{ album.image.url}}">
             <h3>track:</h3>
             {% for track in album.tracks.all %}
-                <p>{{ tracks.name }} by {{ tracks.artist.name }}</p>
+                <p>{{ track.name }} by {{ track.artist.name }}</p>
                 <audio controls>
                     <source src="{{ track.audio_file.url }}" type="audio/mp3">
                     Your browser does not support the audio element.
