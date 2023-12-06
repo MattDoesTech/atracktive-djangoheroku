@@ -7,8 +7,8 @@
   <body>
     <div class="container">
           <h2>{{ album.name }}</h2>
-          <h2>Artist: {{ album.artists.name }}</h2>
           <h3>{{ album.description }}</h3>
+          <p>Artist: {{ album.artists.name }}</p>
           <img src="{{ album.image.url }}">
           <audio controls>
             <source src="{{ album.tracks.audio_file.url }}" type="audio/mpeg">
