@@ -1,0 +1,24 @@
+<!-- sidebar.html - Side Navbar template -->
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h3>ATRACKTIVE</h3>
+    </div>
+
+    <ul class="nav">
+        <!-- Navigation Views -->
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'view1' %}">View 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'view2' %}">View 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'view3' %}">View 3</a>
+        </li>
+
+        <!-- Sign Out -->
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'sign_out' %}">Sign Out</a>
+        </li>
+    </ul>
+</nav>

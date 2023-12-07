@@ -25,5 +25,17 @@ def signup(request):
 def about(request):
     return render(request, 'about.html')
 
+def view1(request):
+    return render(request, 'view1.html')
+
+def view2(request):
+    return render(request, 'view2.html')
+
+def view3(request):
+    return render(request, 'view3.html')
+
+def signout(request):
+    return render(request, 'signout.html')
+
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the catalogue index.")
