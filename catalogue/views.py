@@ -34,8 +34,8 @@ def view2(request):
 def view3(request):
     return render(request, 'view3.html')
 
-def signout(request):
-    return render(request, 'signout.html')
+def sign_out(request):
+    return render(request, 'sign_out.html')
 
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the catalogue index.")
