@@ -23,30 +23,31 @@ audio {
     width: 100%;
     margin-top: 10px;
 }
-    /* Add your styles for the sidebar here */
 
-    .sidebar {
-        height: 100%;
-        width: 250px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #1e1e1e;
-        padding-top: 20px;
-    }
+/* Add your styles for the sidebar here */
 
-    .sidebar a {
-        padding: 10px;
-        text-decoration: none;
-        font-size: 18px;
-        color: #fff9f9;
-        display: block;
-    }
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1e1e1e;
+    padding-top: 20px;
+}
 
-    .sidebar a:hover {
-        background-color: #ddd;
-    }
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff9f9;
+    display: block;
+}
 
-    .sidebar-header {
-        text-align: center;
-    }
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.sidebar-header {
+    text-align: center;
+}
