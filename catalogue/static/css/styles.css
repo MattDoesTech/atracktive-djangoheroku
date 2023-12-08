@@ -1,0 +1,53 @@
+/* styles.css - External Stylesheet */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgba(27, 38, 54, 1);
+    color: #fff; /* Set text color to white for better readability on a dark background */
+}
+
+h1 {
+    text-align: center;
+}
+
+.album {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgba(27, 38, 54, 1);
+    color: #fff; /* Set text color to white for better readability on a dark background */
+
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Add your styles for the sidebar here */
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1e1e1e;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff9f9;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.sidebar-header {
+    text-align: center;
+}
