@@ -13,7 +13,7 @@ h1 {
 .album {
     border: 1px solid #ccc;
     padding: 20px;
-    margin: 20px 0;
+    margin: 60px 0;
     background-color: rgba(27, 38, 54, 1);
     color: #fff; /* Set text color to white for better readability on a dark background */
 
@@ -27,12 +27,13 @@ audio {
 /* Add your styles for the sidebar here */
 
 .sidebar {
-    height: 100%;
-    width: 250px;
+    width: 240px;
+	height: 100%;
+	padding: 8px 8px 8px 8px;
+	background: #1E1E1E;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #1e1e1e;
     padding-top: 20px;
 }
 
@@ -50,4 +51,40 @@ audio {
 
 .sidebar-header {
     text-align: center;
+}
+
+/* Add your styles for the topbar here */
+
+.topbar {
+    width: 80%;
+	height: 140px;
+	padding: 16px 16px 16px 175px;
+	background: #1E1E1E;
+    color: #fff;
+    top: 0;
+    left: 20%;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Include padding in the total width */
+}
+
+.search-bar {
+    width: 300px;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.user-account {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
