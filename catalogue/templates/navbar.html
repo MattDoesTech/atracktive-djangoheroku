@@ -1,9 +1,9 @@
 {% load static %}
 <!-- sidebar.html - Side Navbar template -->
-
+{% block content %}
 <nav class="sidebar">
     <div class="sidebar-header">
-        <h3>ATRACKTIVE</h3>
+        <!-- <img src="{% static 'catalogue/images/logo/atracktive.png' %}" alt="atracktive logo" width="189px" height="151px" /> -->
     </div>
 
     <ul class="nav">
@@ -24,3 +24,4 @@
         </li>
     </ul>
 </nav>
+{% endblock content %}

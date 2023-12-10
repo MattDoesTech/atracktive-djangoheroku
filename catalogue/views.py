@@ -3,11 +3,11 @@ from django.shortcuts import render
 from .models import Album, Artist, Track
 
 def home(request):
-    album = Album.objects.first()
+    albums = Album.objects.all()
     
 
     context = {
-        'album': album,
+        'albums': albums,
         'artist': Artist.objects.all(),  # Include artists in the context
         'tracks': Track.objects.all(),      # Include songs in the context
     }

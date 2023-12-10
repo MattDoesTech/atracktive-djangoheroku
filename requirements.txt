@@ -5,6 +5,8 @@ cffi==1.16.0
 cryptography==41.0.5
 dj-database-url==2.1.0
 Django==4.2.7
+django-appconf==1.0.6
+django-compressor==4.4
 django-storages==1.14.2
 djangorestframework==3.14.0
 djangorestframework-jwt==1.11.0
@@ -18,9 +20,12 @@ psycopg2-binary==2.9.9
 pyasn1==0.5.1
 pycparser==2.21
 PyJWT==1.7.1
+pytailwindcss==0.2.0
 python-dateutil==2.8.2
 python-jose==3.3.0
 pytz==2023.3.post1
+rcssmin==1.1.1
+rjsmin==1.2.1
 rsa==4.9
 s3transfer==0.7.0
 six==1.16.0
