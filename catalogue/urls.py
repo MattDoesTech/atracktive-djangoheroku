@@ -8,6 +8,10 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("about/", views.about, name="about"),
     path("signup/", views.signup, name="signup"),
+    path("view1/", views.view1, name="view1"),
+    path("view2/", views.view2, name="view2"),
+    path("view3/", views.view3, name="view3"),
+    path("sign_out/", views.sign_out, name="sign_out"),
 ]
 urlpatterns += static(settings.MEDIA_URL, 
   document_root=settings.MEDIA_ROOT)

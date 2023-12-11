@@ -3,11 +3,11 @@ from django.shortcuts import render
 from .models import Album, Artist, Track
 
 def home(request):
-    album = Album.objects.first()
+    albums = Album.objects.all()
     
 
     context = {
-        'album': album,
+        'albums': albums,
         'artist': Artist.objects.all(),  # Include artists in the context
         'tracks': Track.objects.all(),      # Include songs in the context
     }
@@ -24,6 +24,18 @@ def signup(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def view1(request):
+    return render(request, 'view1.html')
+
+def view2(request):
+    return render(request, 'view2.html')
+
+def view3(request):
+    return render(request, 'view3.html')
+
+def sign_out(request):
+    return render(request, 'sign_out.html')
 
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the catalogue index.")

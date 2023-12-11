@@ -1,3 +1,4 @@
+{% extends "_base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,53 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATRACKTIVE</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: rgba(27, 38, 54, 1);
-            color: #fff; /* Set text color to white for better readability on a dark background */
-        }
+    <link rel="stylesheet" href="https://unpkg.com/htmx.org@1.7.0/dist/htmx.css">
+    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
 
-        h1 {
-            text-align: center;
-        }
-
-        .album {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin: 20px 0;
-            background-color: rgba(27, 38, 54, 1);
-            color: #fff; /* Set text color to white for better readability on a dark background */
-        
-        }
-
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-    </style>
 </head>
 <body>
-    <h1>Welcome to ATRACKTIVE</h1>
-
-    {% if album %}
-        <div class="album">
-            <h2>{{ album.name }}</h2>
-            <p>Artist: {{ album.artist.name }}</p>
-            <img src="{{ album.image.url}}">
-            <h3>Track:</h3>
-            {% for track in album.tracks.all %}
-                <p>{{ track.name }} by {{ track.artist.name }}</p>
-                <audio controls>
-                    <source src="{{ track.audio_file.url }}" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
-            {% endfor %}
-        </div>
-    {% else %}
-        <p>No album found.</p>
-    {% endif %}
+  {% block content %}
+    {% for album in albums %}
+    <div class="w-96 h-full content-start flex flex-row  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-5">
+          <div class="flex flex-col items-center"
+          <a href="#">
+              <h5 class="mb-0 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ album.name }}</h5>
+              <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ album.artist.name }}</p>
+          </a>
+          <a href="#">
+            <img class="rounded-t-lg mb-2 w-full h-40 object-cover" src="{{ album.image.url}}" alt="" />
+        </a>
+        {% for track in album.tracks.all %}
+        <p class="font-normal mb-2 text-gray-700 dark:text-gray-400">{{ track.name }}</p>
+        <audio controls>
+            <source src="{{ track.audio_file.url }}" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+      </div>
+    {% endfor %}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+  </div>
+{% endblock content %}
 </body>
 </html>

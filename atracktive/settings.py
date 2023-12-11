@@ -37,12 +37,20 @@ AWS_URL = os.environ.get('AWS_URL')
 AWS_DEFAULT_ACL = None
 AWS_S3_REGION_NAME = 'us-east-1'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
+COMPRESS_URL = "https://atracktive.s3.amazonaws.com/"
+COMPRESS_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+COMPRESS_ROOT = BASE_DIR / 'static'
+# COMPRESS_ENABLED = True
+# STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'atracktive-225c4e44619d.herokuapp.com'
+    'atracktive-225c4e44619d.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
@@ -60,6 +68,7 @@ INSTALLED_APPS = [
     'rest_framework_jwt',
     'catalogue',
     'storages',
+    'compressor'
 ]
 
 MIDDLEWARE = [
@@ -147,8 +156,6 @@ STATIC_URL = ('{}/static/'.format(AWS_URL))
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 MEDIA_URL = ('{}/media/'.format(AWS_URL))
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
