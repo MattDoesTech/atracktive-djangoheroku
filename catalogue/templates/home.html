@@ -13,24 +13,23 @@
 <body>
   {% block content %}
     {% for album in albums %}
-    <div class="w-96 h-96 content-center flex bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 mb-8">
-        <div class="p-10">
-          <div class="flex flex-col items-center"
+    <div class="flex flex-col items-center content-center mb-8 bg-white border border-gray-200 rounded-lg shadow-md w-96 h-96 dark:bg-gray-800 dark:border-gray-700">
+
           <a href="#">
-              <h5 class="mb-0 text-lg text-center w-70 line-clamp-1 hover:line-clamp-none whitespace-normal font-bold tracking-tight text-gray-900 dark:text-white">{{ album.name }}</h5>
-              <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ album.artist.name }}</p>
+              <h5 class="mt-8 mb-0 text-lg font-bold tracking-tight text-center text-gray-900 whitespace-normal w-70 line-clamp-1 hover:line-clamp-none dark:text-white">{{ album.name }}</h5>
+              <p class="mb-2 font-normal text-center text-gray-700 dark:text-gray-400">{{ album.artist.name }}</p>
           </a>
           <a href="#">
-            <img class="rounded-t-lg mb-2 w-40 h-40 object-cover" src="{{ album.image.url}}" alt="" />
+            <img class="object-cover w-40 h-40 mb-2 rounded-t-lg" src="{{ album.image.url}}" alt="" />
         </a>
         {% for track in album.tracks.all %}
-        <p class="font-normal mb-2 text-gray-700 dark:text-gray-400">{{ track.name }}</p>
+        <p class="mb-2 font-normal text-center text-gray-700 dark:text-gray-400">{{ track.name }}</p>
         <audio controls>
             <source src="{{ track.audio_file.url }}" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
-      </div>
-      </div>
+      <!-- </div> -->
+      <!-- </div> -->
     </div>
   {% endfor %}
   {% endfor %}
